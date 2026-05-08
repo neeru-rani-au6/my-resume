@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Neeru Rani - Resume</title>
+
+  <!-- Premium Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #163a5f;
+      --text: #2b2b2b;
+      --light-text: #3f4a56;
+      --border: #d8e0ea;
+      --bg: #f5f7fa;
+      --link: #0b57d0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      padding: 20px;
+    }
+
+    .resume {
+      width: 100%;
+      max-width: 920px;
+      margin: auto;
+      background: #fff;
+      padding: 48px;
+      border-radius: 10px;
+      border: 1px solid #edf1f5;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    /* HEADER */
+
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .name {
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.5px;
+    }
+
+    .role {
+      margin-top: 6px;
+      font-size: 16px;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .contact {
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--light-text);
+      line-height: 1.8;
+    }
+
+    .contact a {
+      color: var(--link);
+      font-weight: 500;
+      transition: 0.2s ease;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      color: #084298;
+    }
+
+    .divider {
+      margin-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* SECTION */
+
+    .section {
+      margin-top: 22px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.2px;
+    }
+
+    /* SUMMARY */
+
+    .summary {
+      font-size: 12px;
+      color: var(--light-text);
+      text-align: justify;
+      line-height: 1.8;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .skill-row {
+      display: flex;
+      font-size: 11.5px;
+    }
+
+    .skill-title {
+      min-width: 130px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .skill-value {
+      color: var(--light-text);
+      line-height: 1.7;
+    }
+
+    /* EXPERIENCE */
+
+    .experience-item {
+      margin-bottom: 18px;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .company {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .date {
+      font-size: 10.5px;
+      color: var(--light-text);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* PROJECTS */
+
+    .project {
+      margin-bottom: 24px;
+      page-break-inside: avoid;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 8px;
+    }
+
+    .project-name {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .project-date {
+      font-size: 10.5px;
+      color: var(--light-text);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .project-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .project-list li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 6px;
+      font-size: 11.5px;
+      color: var(--light-text);
+      line-height: 1.7;
+    }
+
+    .project-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .label {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* LINKS */
+
+    .project-link {
+      color: var(--link);
+      font-weight: 500;
+      word-break: break-word;
+      transition: 0.2s ease;
+      text-decoration: none;
+    }
+
+    .project-link:hover {
+      color: #084298;
+    }
+
+    /* EDUCATION */
+
+    .education-item {
+      margin-bottom: 10px;
+      font-size: 11px;
+      color: var(--light-text);
+      line-height: 1.7;
+    }
+
+    .education-item strong {
+      color: var(--text);
+    }
+
+    /* PRINT */
+
+    @media print {
+
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .resume {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        max-width: 100%;
+        padding: 24px;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .project {
+        page-break-inside: avoid;
+      }
+
+      a {
+        color: #0b57d0 !important;
+        text-decoration: none !important;
+      }
+    }
+
+    @page {
+      size: letter;
+      margin: 0.5in;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="resume">
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+      <div class="name">
+        NEERU RANI
+      </div>
+
+      <div class="role">
+        Full Stack Developer | React.js | Node.js | AI Applications
+      </div>
+
+      <div class="contact">
+        Gurugram, India |
+        <a href="tel:+916361714164">+91 6361714164</a> |
+        <a href="mailto:neeruolha@gmail.com">neeruolha@gmail.com</a>
+            |
+
+        <a href="https://linkedin.com/in/neerurani" target="_blank">
+          LinkedIn
+        </a>
+
+        |
+
+        <a href="https://github.com/neeru-rani-au6" target="_blank">
+          GitHub
+        </a>
+      </div>
+
+      <div class="divider"></div>
+
+    </div>
+
+    <!-- SUMMARY -->
+
+    <div class="section">
+
+      <div class="section-title">
+        Professional Summary
+      </div>
+
+      <div class="summary">
+        Full Stack Developer with 5+ years of experience building scalable web applications using React.js, Node.js, TypeScript, and MongoDB. Experienced in AI-powered platforms, workflow automation, RESTful APIs, cloud integrations, and enterprise skill management systems.
+      </div>
+
+    </div>
+
+    <!-- SKILLS -->
+
+    <div class="section">
+
+      <div class="section-title">
+        Technical Skills
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-row">
+          <div class="skill-title">Languages:</div>
+          <div class="skill-value">
+            JavaScript, TypeScript, HTML5, CSS3
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-title">Frontend:</div>
+          <div class="skill-value">
+            React.js, Redux, Material UI, Ant Design, Chart.js, Three.js
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-title">Backend:</div>
+          <div class="skill-value">
+            Node.js, Express.js, REST APIs, Socket.io, Swagger
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-title">Databases:</div>
+          <div class="skill-value">
+            MongoDB, Neo4j, RethinkDB, OpenSearch
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-title">Cloud & Tools:</div>
+          <div class="skill-value">
+            AWS S3, AWS SQS, Azure OpenAI, Git
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- EXPERIENCE -->
+
+    <div class="section">
+
+      <div class="section-title">
+        Professional Experience
+      </div>
+
+      <div class="experience-item">
+
+        <div class="experience-header">
+
+          <div class="company">
+            TechBliss Digital Solution Pvt. Ltd. — Full Stack Developer
+          </div>
+
+          <div class="date">
+            Sep 2024 – Present
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="experience-item">
+
+        <div class="experience-header">
+
+          <div class="company">
+            MindKosh AI — Full Stack Developer
+          </div>
+
+          <div class="date">
+            Mar 2021 – Aug 2024
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECTS -->
+
+    <div class="section">
+
+      <div class="section-title">
+        Key Projects
+      </div>
+
+      <!-- PROJECT 1 -->
+
+      <div class="project">
+
+        <div class="project-header">
+
+          <div class="project-name">
+            Skill Management Framework (SkilloMeter)
+          </div>
+
+          <div class="project-date">
+            Oct 2024 – Present
+          </div>
+
+        </div>
+
+        <ul class="project-list">
+
+          <li>
+            Enterprise-level skill management platform for learning activity tracking, skill gap analysis, AI recommendations, and media processing.
+          </li>
+
+          <li>
+            Built activity synchronization services for enterprise workflows.
+          </li>
+
+          <li>
+            Integrated AWS SQS consumers for real-time processing.
+          </li>
+
+          <li>
+            Developed REST APIs, cron jobs, and AI-powered workflows.
+          </li>
+
+          <li>
+            <span class="label">Tech Stack:</span>
+            Node.js, Express.js, MongoDB, Neo4j, OpenSearch, AWS SQS, Azure OpenAI
+          </li>
+
+          <li>
+            <span class="label">Live Project:</span>
+            <a href="https://aim-skillometer-uat.infiniit.ai/login"
+              target="_blank"
+              class="project-link">
+              aim-skillometer
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- PROJECT 2 -->
+
+      <div class="project">
+
+        <div class="project-header">
+
+          <div class="project-name">
+            Skill Framework
+          </div>
+
+          <div class="project-date">
+            Feb 2025 – Present
+          </div>
+
+        </div>
+
+        <ul class="project-list">
+
+          <li>
+            Full-stack assessment platform for competency tracking, certifications, and performance analytics.
+          </li>
+
+          <li>
+            Developed assessment workflows and competency dashboards.
+          </li>
+
+          <li>
+            Built secure backend APIs and authentication systems.
+          </li>
+
+          <li>
+            Created responsive UI using React.js and Chart.js.
+          </li>
+
+          <li>
+            <span class="label">Tech Stack:</span>
+            React.js, TypeScript, Node.js, Express.js, MongoDB, Chart.js, Swagger
+          </li>
+
+          <li>
+            <span class="label">Live Project:</span>
+            <a href="https://metlife-sandbox.infiniit.ai/skill-dashboard"
+              target="_blank"
+              class="project-link">
+              skill-dashboard
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- PROJECT 3 -->
+
+      <div class="project">
+
+        <div class="project-header">
+
+          <div class="project-name">
+            Gen AI Studio
+          </div>
+
+          <div class="project-date">
+            Oct 2024 – Present
+          </div>
+
+        </div>
+
+        <ul class="project-list">
+
+          <li>
+            AI-powered platform for sales automation, assistant workflows, and customer engagement.
+          </li>
+
+          <li>
+            Developed scalable REST APIs for AI assistant workflows.
+          </li>
+
+          <li>
+            Built responsive frontend applications with React.js.
+          </li>
+
+          <li>
+            Integrated AI-driven workflow automation and task handling.
+          </li>
+
+          <li>
+            <span class="label">Tech Stack:</span>
+            React.js, Node.js, MongoDB, RethinkDB, ReactMarkdown
+          </li>
+
+          <li>
+            <span class="label">Live Project:</span>
+            <a href="https://studio.infiniit.ai/"
+              target="_blank"
+              class="project-link">
+              studio.infiniit.ai
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- PROJECT 4 -->
+
+      <div class="project">
+
+        <div class="project-header">
+
+          <div class="project-name">
+            MindKosh AI
+          </div>
+
+          <div class="project-date">
+            Mar 2021 – Aug 2024
+          </div>
+
+        </div>
+
+        <ul class="project-list">
+
+          <li>
+            AI data labeling and validation platform with image annotation workflows and AWS S3 integration.
+          </li>
+
+          <li>
+            Developed responsive UI workflows and annotation modules.
+          </li>
+
+          <li>
+            Built REST APIs and integrated cloud storage solutions.
+          </li>
+
+          <li>
+            Worked with Three.js for image visualization and annotation.
+          </li>
+
+          <li>
+            <span class="label">Tech Stack:</span>
+            React.js, TypeScript, Redux, Three.js, Node.js, MongoDB, Ant Design
+          </li>
+
+          <li>
+            <span class="label">Live Project:</span>
+            <a href="https://app.mindkosh.com"
+              target="_blank"
+              class="project-link">
+              app.mindkosh.com
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- EDUCATION -->
+
+    <div class="section">
+
+      <div class="section-title">
+        Education
+      </div>
+
+      <div class="education-item">
+        <strong>Full Stack Web Developer Certification</strong>
+        — AttainU, Bangalore
+        | Dec 2019 – Sep 2020
+      </div>
+
+      <div class="education-item">
+        <strong>Bachelor of Science (B.Sc.)</strong>
+        — Govt. College Bawani Khera, Haryana
+        | Jul 2016 – May 2019
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
